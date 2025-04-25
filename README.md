@@ -25,6 +25,9 @@ source venv/bin/activate
 # Instalar Django
 pip install django
 
+# Instalar Django Rest Framework y Django Filter
+pip install djangorestframework django-filter
+
 # Aplicar migraciones
 python manage.py makemigrations
 python manage.py migrate
@@ -49,6 +52,7 @@ python manage.py runserver
 ```
 
 Accede al panel de administración en: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
+Accede al panel de Django Rest Framework en: [http://127.0.0.1:8000/api/](http://127.0.0.1:8000/api/)
 
 ## Modelos
 
