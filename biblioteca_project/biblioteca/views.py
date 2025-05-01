@@ -20,10 +20,12 @@ class AutorViewSet(viewsets.ModelViewSet):
 class LibroViewSet(viewsets.ModelViewSet):
     queryset = Libro.objects.all()
     serializer_class = LibroSerializer
+    # Agregamos filtros por autor y fecha de publicación usando django-filter
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_fields = ['autor', 'fecha_publicacion']
     ordering_fields = ['titulo', 'fecha_publicacion']
     
+    # Creamos una ruta personalizada para calcular el promedio de calificaciones de un libro
     @action(detail=True, methods=['get'])
     def resenas_promedio(self, request, pk=None):
         libro = self.get_object()

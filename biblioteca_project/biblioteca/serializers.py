@@ -13,7 +13,7 @@ class ResenaSerializer(serializers.ModelSerializer):
 
 class LibroSerializer(serializers.ModelSerializer):
     autor_nombre = serializers.ReadOnlyField(source='autor.nombre')
-    
+    # Usamos SerializerMethodField para obtener dinámicamente las 5 reseñas más recientes
     resenas_recientes = serializers.SerializerMethodField()
     
     class Meta:
